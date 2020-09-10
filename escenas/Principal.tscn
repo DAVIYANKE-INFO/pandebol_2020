@@ -1,0 +1,567 @@
+[gd_scene load_steps=43 format=2]
+
+[ext_resource path="res://scripts/Principal.gd" type="Script" id=1]
+[ext_resource path="res://escenas/Monitor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://escenas/BarraProgreso.tscn" type="PackedScene" id=3]
+[ext_resource path="res://escenas/Explosion.tscn" type="PackedScene" id=4]
+[ext_resource path="res://recursos/fonco_bolitas.png" type="Texture" id=5]
+[ext_resource path="res://recursos/cruzRoja_peque.png" type="Texture" id=6]
+[ext_resource path="res://recursos/paredes/pared4.png" type="Texture" id=7]
+[ext_resource path="res://recursos/paredes/pared6.png" type="Texture" id=8]
+[ext_resource path="res://recursos/paredes/pared2.png" type="Texture" id=9]
+[ext_resource path="res://recursos/paredes/pared3.png" type="Texture" id=10]
+[ext_resource path="res://recursos/paredes/pared1.png" type="Texture" id=11]
+[ext_resource path="res://recursos/paredes/pared5.png" type="Texture" id=12]
+[ext_resource path="res://recursos/remolino.png" type="Texture" id=13]
+[ext_resource path="res://recursos/botones/menu-down.png" type="Texture" id=14]
+[ext_resource path="res://recursos/RuthSignature-PersonalUse.otf" type="DynamicFontData" id=15]
+[ext_resource path="res://recursos/virus.png" type="Texture" id=16]
+[ext_resource path="res://recursos/musica/Juego pantalla 2_final_juego.ogg" type="AudioStream" id=17]
+[ext_resource path="res://recursos/tuerca.png" type="Texture" id=18]
+[ext_resource path="res://recursos/ulti imagenes/fond1.jpg" type="Texture" id=19]
+[ext_resource path="res://recursos/sonido on.png" type="Texture" id=20]
+[ext_resource path="res://recursos/ladrillo.png" type="Texture" id=21]
+[ext_resource path="res://recursos/burbuja.png" type="Texture" id=22]
+[ext_resource path="res://recursos/particulas/particula_peque.png" type="Texture" id=23]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 30.0
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 1, 1, 0.623529 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 50
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 150
+font_data = ExtResource( 15 )
+
+[sub_resource type="Animation" id=10]
+resource_name = "ganar"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "perder"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Perder/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=12]
+size = 150
+font_data = ExtResource( 15 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0, 0, 0, 0.827451 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 100
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 80
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 80
+font_data = ExtResource( 15 )
+
+[sub_resource type="ParticlesMaterial" id=17]
+emission_shape = 2
+emission_box_extents = Vector3( 100, 3, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 10, 0 )
+spread = 133.33
+flatness = 0.72
+gravity = Vector3( 0, 100, 0 )
+initial_velocity = 259.27
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[sub_resource type="ParticlesMaterial" id=18]
+emission_shape = 2
+emission_box_extents = Vector3( 200, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+flatness = 0.96
+gravity = Vector3( 0, 1, 0 )
+initial_velocity = 166.67
+initial_velocity_random = 0.46
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[sub_resource type="ParticlesMaterial" id=19]
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 50.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[node name="Principal" type="Node2D"]
+position = Vector2( 275.017, 510.041 )
+scale = Vector2( 1.1, 1.1 )
+script = ExtResource( 1 )
+
+[node name="Fondo" type="Sprite" parent="."]
+position = Vector2( 89.4717, 138.13 )
+scale = Vector2( 0.898092, 1.0363 )
+texture = ExtResource( 19 )
+
+[node name="Monitor" parent="." instance=ExtResource( 2 )]
+visible = false
+margin_left = -237.875
+margin_top = -280.881
+margin_right = -237.875
+margin_bottom = -280.881
+
+[node name="BarraProgreso" parent="." instance=ExtResource( 3 )]
+margin_left = 61.584
+margin_top = -432.257
+margin_right = 61.584
+margin_bottom = -432.257
+
+[node name="Explosion" parent="." instance=ExtResource( 4 )]
+
+[node name="Node" type="Node2D" parent="."]
+position = Vector2( -0.0461731, 7.43149 )
+
+[node name="Position2D" type="Position2D" parent="Node"]
+position = Vector2( -5.62177, -302.517 )
+
+[node name="Position2D2" type="Position2D" parent="Node"]
+position = Vector2( 228.57, -188.38 )
+
+[node name="Position2D3" type="Position2D" parent="Node"]
+position = Vector2( 214.664, 193.113 )
+
+[node name="Position2D4" type="Position2D" parent="Node"]
+position = Vector2( 4.31033, 270.942 )
+
+[node name="Position2D5" type="Position2D" parent="Node"]
+position = Vector2( -217.962, 172.589 )
+
+[node name="Position2D6" type="Position2D" parent="Node"]
+position = Vector2( -229.029, -195.133 )
+
+[node name="BotonesPoder" type="Node2D" parent="."]
+position = Vector2( 144.41, -346.027 )
+
+[node name="TextureButton1" type="TextureButton" parent="BotonesPoder"]
+margin_left = -23.5265
+margin_top = -119.463
+margin_right = 24.4735
+margin_bottom = -71.4626
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="BotonesPoder"]
+margin_left = 61.352
+margin_top = -78.5272
+margin_right = 109.352
+margin_bottom = -30.5272
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton3" type="TextureButton" parent="BotonesPoder"]
+margin_left = 58.3519
+margin_top = 27.3625
+margin_right = 106.352
+margin_bottom = 75.3625
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton4" type="TextureButton" parent="BotonesPoder"]
+margin_left = -21.7233
+margin_top = 68.896
+margin_right = 26.2767
+margin_bottom = 116.896
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton5" type="TextureButton" parent="BotonesPoder"]
+margin_left = -107.203
+margin_top = 28.1275
+margin_right = -59.2027
+margin_bottom = 76.1275
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton6" type="TextureButton" parent="BotonesPoder"]
+margin_left = -105.334
+margin_top = -77.9613
+margin_right = -57.334
+margin_bottom = -29.9613
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paredes" type="Node2D" parent="."]
+rotation = 2.0944
+scale = Vector2( 0.85, 0.85 )
+
+[node name="Area2D" type="Area2D" parent="Paredes" groups=[
+"pared",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/Area2D"]
+position = Vector2( -295.723, 178.367 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Paredes/Area2D"]
+position = Vector2( 1.86789, 1.99234 )
+texture = ExtResource( 11 )
+
+[node name="Area2D2" type="Area2D" parent="Paredes" groups=[
+"pared",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/Area2D2"]
+position = Vector2( -318.703, -126.925 )
+shape = SubResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="Paredes/Area2D2"]
+texture = ExtResource( 9 )
+
+[node name="Area2D3" type="Area2D" parent="Paredes" groups=[
+"pared",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/Area2D3"]
+position = Vector2( 73.8301, -337.413 )
+shape = SubResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="Paredes/Area2D3"]
+texture = ExtResource( 10 )
+
+[node name="Area2D4" type="Area2D" parent="Paredes" groups=[
+"pared",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/Area2D4"]
+position = Vector2( 282.658, -164.064 )
+shape = SubResource( 4 )
+
+[node name="Sprite4" type="Sprite" parent="Paredes/Area2D4"]
+texture = ExtResource( 7 )
+
+[node name="Area2D5" type="Area2D" parent="Paredes" groups=[
+"pared",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/Area2D5"]
+position = Vector2( 312.104, 121.962 )
+shape = SubResource( 5 )
+
+[node name="Sprite5" type="Sprite" parent="Paredes/Area2D5"]
+texture = ExtResource( 12 )
+
+[node name="Area2D6" type="Area2D" parent="Paredes" groups=[
+"pared",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/Area2D6"]
+position = Vector2( -58.9419, 342.758 )
+shape = SubResource( 6 )
+
+[node name="Sprite6" type="Sprite" parent="Paredes/Area2D6"]
+texture = ExtResource( 8 )
+
+[node name="Fondo" type="Sprite" parent="Paredes"]
+rotation = -2.0944
+scale = Vector2( 1.11111, 1.11111 )
+texture = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 65.6215
+margin_top = 279.984
+margin_right = 237.621
+margin_bottom = 342.984
+text = "Mezclar"
+icon = ExtResource( 13 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowDialog" type="AcceptDialog" parent="Button"]
+margin_left = -18.6877
+margin_top = -122.805
+margin_right = 29.3123
+margin_bottom = -82.8052
+window_title = "¡Alerta!"
+dialog_text = "no puedes mezclar cuando hay virus dentro del area a protejer"
+
+[node name="meta" type="Control" parent="."]
+margin_left = -241.039
+margin_top = -397.444
+margin_right = -201.039
+margin_bottom = -357.444
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="meta"]
+margin_right = 201.0
+margin_bottom = 92.0
+custom_styles/panel = SubResource( 7 )
+
+[node name="Label" type="Label" parent="meta/Panel"]
+margin_left = 20.2033
+margin_top = 17.3171
+margin_right = 181.203
+margin_bottom = 67.3171
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Elimina a X Virus"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ganar" type="Node2D" parent="."]
+visible = false
+z_index = 20
+
+[node name="ColorRect" type="ColorRect" parent="Ganar"]
+margin_left = -292.0
+margin_top = -463.0
+margin_right = 571.0
+margin_bottom = 798.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Ganar"]
+margin_left = -190.273
+margin_top = -86.4879
+margin_right = 243.727
+margin_bottom = 72.5121
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "GANASTE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ganar"]
+anims/ganar = SubResource( 10 )
+anims/perder = SubResource( 11 )
+
+[node name="Perder" type="Node2D" parent="."]
+visible = false
+z_index = 30
+
+[node name="ColorRect" type="ColorRect" parent="Perder"]
+margin_left = -264.0
+margin_top = -474.0
+margin_right = 342.0
+margin_bottom = 595.0
+color = Color( 0, 0, 0, 0.133333 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Perder"]
+margin_left = -92.9744
+margin_top = -97.2987
+margin_right = 70.0256
+margin_bottom = 52.7013
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "perdiste"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonPausa" type="Button" parent="."]
+margin_left = -246.0
+margin_top = 279.0
+margin_right = -87.0
+margin_bottom = 346.0
+text = "Menu/Pausa"
+icon = ExtResource( 18 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pausa" type="Node2D" parent="."]
+visible = false
+z_index = 20
+
+[node name="Panel" type="Panel" parent="Pausa"]
+margin_left = -264.0
+margin_top = -474.0
+margin_right = 384.0
+margin_bottom = 714.0
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Pausa/Panel"]
+margin_left = 192.435
+margin_top = 105.948
+margin_right = 333.435
+margin_bottom = 205.948
+custom_fonts/font = SubResource( 14 )
+text = "Descanso"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Niveles" type="Button" parent="Pausa/Panel"]
+margin_left = 144.865
+margin_top = 349.539
+margin_right = 390.865
+margin_bottom = 475.539
+custom_fonts/font = SubResource( 15 )
+text = "Niveles"
+icon = ExtResource( 14 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sonido" type="Button" parent="Pausa/Panel"]
+margin_left = 146.558
+margin_top = 501.113
+margin_right = 391.558
+margin_bottom = 623.113
+custom_fonts/font = SubResource( 16 )
+text = "Musica"
+icon = ExtResource( 20 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reanudar" type="Button" parent="Pausa/Panel"]
+margin_left = 148.72
+margin_top = 648.142
+margin_right = 393.72
+margin_bottom = 770.142
+custom_fonts/font = SubResource( 16 )
+text = "Continuar"
+icon = ExtResource( 16 )
+expand_icon = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 17 )
+autoplay = true
+attenuation = 0.812253
+
+[node name="ParticlesBurbujas" type="Particles2D" parent="."]
+scale = Vector2( 0.05, 0.05 )
+z_index = 15
+emitting = false
+amount = 10
+lifetime = 3.0
+one_shot = true
+process_material = SubResource( 17 )
+texture = ExtResource( 22 )
+
+[node name="ParticlesLadrillo" type="Particles2D" parent="."]
+scale = Vector2( 0.4, 0.4 )
+emitting = false
+lifetime = 2.0
+one_shot = true
+process_material = SubResource( 18 )
+texture = ExtResource( 21 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -260.98
+margin_top = 682.851
+margin_right = 453.02
+margin_bottom = 934.851
+color = Color( 0.0156863, 0.835294, 0.337255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParticlesExplo" type="Particles2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+emitting = false
+one_shot = true
+local_coords = false
+process_material = SubResource( 19 )
+texture = ExtResource( 23 )
+[connection signal="button_down" from="BotonesPoder/TextureButton1" to="." method="_on_TextureButton1_button_down"]
+[connection signal="button_down" from="BotonesPoder/TextureButton2" to="." method="_on_TextureButton2_button_down"]
+[connection signal="button_down" from="BotonesPoder/TextureButton3" to="." method="_on_TextureButton3_button_down"]
+[connection signal="button_down" from="BotonesPoder/TextureButton4" to="." method="_on_TextureButton4_button_down"]
+[connection signal="button_down" from="BotonesPoder/TextureButton5" to="." method="_on_TextureButton5_button_down"]
+[connection signal="button_down" from="BotonesPoder/TextureButton6" to="." method="_on_TextureButton6_button_down"]
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
+[connection signal="button_down" from="BotonPausa" to="." method="_on_BotonPausa_button_down"]
+[connection signal="button_down" from="Pausa/Panel/Niveles" to="." method="_on_Niveles_button_down"]
+[connection signal="button_down" from="Pausa/Panel/Sonido" to="." method="_on_Sonido_button_down"]
+[connection signal="button_up" from="Pausa/Panel/Reanudar" to="." method="_on_Reanudar_button_up"]

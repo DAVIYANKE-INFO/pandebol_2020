@@ -1,0 +1,193 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://recursos/poder/borde4.png" type="Texture" id=1]
+[ext_resource path="res://recursos/poder/Relleno.png" type="Texture" id=2]
+[ext_resource path="res://recursos/poder/borde1.png" type="Texture" id=3]
+[ext_resource path="res://recursos/poder/borde2.png" type="Texture" id=4]
+[ext_resource path="res://recursos/poder/borde3.png" type="Texture" id=5]
+[ext_resource path="res://recursos/poder/borde6.png" type="Texture" id=6]
+[ext_resource path="res://recursos/poder/borde5.png" type="Texture" id=7]
+[ext_resource path="res://recursos/RuthSignature-PersonalUse.otf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 8 )
+
+[node name="BarraProgreso" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_left = 0.226236
+margin_top = 0.401731
+margin_right = 170.226
+margin_bottom = 171.402
+value = 30.0
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+fill_mode = 8
+tint_over = Color( 0.941176, 0, 0, 1 )
+tint_progress = Color( 0.933333, 0.458824, 0.458824, 1 )
+radial_fill_degrees = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureProgress"]
+margin_left = 73.5391
+margin_top = 14.8492
+margin_right = 113.539
+margin_bottom = 44.8492
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.490196, 0.431373, 0.431373, 1 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress2" type="TextureProgress" parent="."]
+margin_left = 0.091114
+margin_top = -0.124607
+margin_right = 170.091
+margin_bottom = 170.875
+value = 30.0
+texture_over = ExtResource( 4 )
+texture_progress = ExtResource( 2 )
+fill_mode = 8
+tint_over = Color( 0.988235, 1, 0, 1 )
+tint_progress = Color( 0.901961, 0.937255, 0.498039, 1 )
+radial_initial_angle = 60.0
+radial_fill_degrees = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="TextureProgress2"]
+margin_left = 123.172
+margin_top = 43.6599
+margin_right = 163.172
+margin_bottom = 73.6599
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.490196, 0.431373, 0.431373, 1 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress3" type="TextureProgress" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+value = 30.0
+texture_over = ExtResource( 5 )
+texture_progress = ExtResource( 2 )
+fill_mode = 8
+tint_over = Color( 0.141176, 1, 0, 1 )
+tint_progress = Color( 0.529412, 0.933333, 0.403922, 1 )
+radial_initial_angle = 120.0
+radial_fill_degrees = 60.0
+
+[node name="Label3" type="Label" parent="TextureProgress3"]
+margin_left = 120.434
+margin_top = 96.5683
+margin_right = 160.434
+margin_bottom = 126.568
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.490196, 0.431373, 0.431373, 1 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress4" type="TextureProgress" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+value = 30.0
+texture_over = ExtResource( 1 )
+texture_progress = ExtResource( 2 )
+fill_mode = 8
+tint_over = Color( 0.952941, 0, 1, 1 )
+tint_progress = Color( 0.901961, 0.384314, 0.941176, 1 )
+radial_initial_angle = 180.0
+radial_fill_degrees = 60.0
+
+[node name="Label4" type="Label" parent="TextureProgress4"]
+margin_left = 73.7653
+margin_top = 120.61
+margin_right = 113.765
+margin_bottom = 150.61
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.490196, 0.431373, 0.431373, 1 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress5" type="TextureProgress" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+value = 30.0
+texture_over = ExtResource( 7 )
+texture_progress = ExtResource( 2 )
+fill_mode = 8
+tint_over = Color( 1, 0.662745, 0, 1 )
+tint_progress = Color( 0.952941, 0.666667, 0.254902, 1 )
+radial_initial_angle = 240.0
+radial_fill_degrees = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="TextureProgress5"]
+margin_left = 28.5105
+margin_top = 95.8612
+margin_right = 68.5105
+margin_bottom = 125.861
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.490196, 0.431373, 0.431373, 1 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress6" type="TextureProgress" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+value = 30.0
+texture_over = ExtResource( 6 )
+texture_progress = ExtResource( 2 )
+fill_mode = 8
+tint_over = Color( 0, 0.0784314, 1, 1 )
+tint_progress = Color( 0.286275, 0.337255, 0.929412, 1 )
+radial_initial_angle = 300.0
+radial_fill_degrees = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="TextureProgress6"]
+margin_left = 30.6318
+margin_top = 42.8282
+margin_right = 70.6318
+margin_bottom = 72.8282
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.490196, 0.431373, 0.431373, 1 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Juego pantalla 2_final_juego.ogg-2b09b36e05aa5990f73905b7424dbac5.oggstr"
+
+[deps]
+
+source_file="res://recursos/musica/Juego pantalla 2_final_juego.ogg"
+dest_files=[ "res://.import/Juego pantalla 2_final_juego.ogg-2b09b36e05aa5990f73905b7424dbac5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
